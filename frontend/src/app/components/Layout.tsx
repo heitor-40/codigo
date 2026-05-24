@@ -185,7 +185,7 @@ export function Layout() {
         <div className="h-14 flex items-center justify-between px-4 border-b" style={{ borderColor: '#a0191e50' }}>
           <div className="flex items-center gap-2">
             <img src={logo} alt="Logo" className="w-6 h-6" />
-            <span className="font-bold text-base tracking-wide text-white">Shopping Flamboyant</span>
+            <span className="font-bold text-base tracking-wide text-white">Flamboyant Shopping</span>
           </div>
           <div className="flex items-center gap-4">
             <button
