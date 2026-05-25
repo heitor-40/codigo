@@ -1635,7 +1635,7 @@ export function Insurance() {
         </div>
 
         {/* Right Panel (280px fixed) - SEM PERFIL */}
-        <div className="w-full lg:w-[280px] space-y-3 md:space-y-4 flex-shrink-0 overflow-y-auto rounded-[0px]">
+        <div className="w-full lg:w-[280px] space-y-3 md:space-y-4 flex-shrink-0 overflow-y-auto rounded-[0px] flex flex-col">
           {/* 1. Nova Apólice Button com Dropdown - Apenas para Relacionamento */}
           {canEdit && (
             <div className="relative">
@@ -1801,59 +1801,11 @@ export function Insurance() {
             </div>
           </motion.div>
 
-          {/* 4. Alertas Críticos */}
-          <motion.div
-            className="bg-white dark:bg-[#242938] rounded-xl p-4 border cursor-pointer"
-            style={{ borderColor: colors.cardBorder, boxShadow: `0 1px 4px ${colors.brandMaroon}0F` }}
-            whileHover={{
-              scale: 1.03,
-              boxShadow: `0 8px 24px ${colors.brandRed}15`,
-              y: -4
-            }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-          >
-            <h4 className="text-[12px] font-bold mb-3" style={{ color: colors.brandMaroon }}>Alertas Críticos</h4>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2 p-2 rounded-lg border" style={{ backgroundColor: `${colors.brandRed}08`, borderColor: `${colors.brandRed}30` }}>
-                <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: colors.brandRed }} strokeWidth={1.5} />
-                <div>
-                  <div className="text-[11px] font-semibold" style={{ color: colors.brandMaroon }}>Apólice Vencida</div>
-                  <div className="text-[10px] text-gray-600 dark:text-[#94A3B8] mt-0.5">SU-2024-4521 - Alagamento e Infiltração</div>
-                  <button
-                    onClick={() => handleKPICardClick("vencida")}
-                    className="text-[10px] font-medium mt-1 hover:underline"
-                    style={{ color: colors.brandRed }}
-                  >
-                    Ver apólice completa
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-start gap-2 p-2 rounded-lg border" style={{ backgroundColor: `${colors.tan}15`, borderColor: `${colors.tan}40` }}>
-                <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: colors.tan }} strokeWidth={1.5} />
-                <div>
-                  <div className="text-[11px] font-semibold" style={{ color: colors.brandMaroon }}>Risco Alto Detectado</div>
-                  <div className="text-[10px] text-gray-600 dark:text-[#94A3B8] mt-0.5">AL-2025-0034 - Resp. Civil - Elevadores</div>
-                  <button
-                    onClick={() => {
-                      const policy = allPolicies.find(p => p.id === "AL-2025-0034");
-                      if (!policy) return;
-                      setSelectedPolicy(policy);
-                      setShowViewApoliceModal(true);
-                    }}
-                    className="text-[10px] font-medium mt-1 hover:underline"
-                    style={{ color: colors.tan }}
-                  >
-                    Ver detalhes
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+        
 
           {/* 5. Mapa de Localização de Conformidade */}
           <motion.div
-            className="bg-white dark:bg-[#242938] rounded-xl p-5 border relative"
+            className="bg-white dark:bg-[#242938] rounded-xl p-5 border relative flex flex-col flex-grow"
             style={{ borderColor: colors.cardBorder, boxShadow: `0 1px 4px ${colors.brandMaroon}0F` }}
             whileHover={{
               boxShadow: `0 8px 24px ${colors.brandMaroon}15`
